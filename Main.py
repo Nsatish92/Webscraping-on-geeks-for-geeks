@@ -16,12 +16,14 @@ soup = BeautifulSoup(response.text, 'html.parser')
 
 # Find the user rating element
 rating_element = soup.find('div', class_='score_card_left')
-
+problem_solved=soup.find('div',class_="score_card_value")
 #e=soup.find('div',class_="contest-participated-count")
 # Extract the rating value
 rating = rating_element.text.strip()
+problem=problem_solved.text.strip()
 #s=e.text.strip()
 
 # Print the user rating
 print('User Rating:', rating)
+print("problem:",problem)
 #print(s)
